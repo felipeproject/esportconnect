@@ -1,0 +1,228 @@
+/* Estilos globais aplicados a todas as páginas */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #000000, #182848);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #0A0A0A; /* Cor escura e sofisticada para a navbar */
+    color: #F0F4F8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+    border-bottom: 2px solid #6dbeda; /* Linha azul claro de destaque */
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F0F4F8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.1); /* Efeito de zoom na logo */
+}
+
+/* Links de navegação */
+.navbar .links a {
+    color: #F0F4F8;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar .links a:hover {
+    color: #6dbeda; /* Cor vibrante para o hover */
+    transform: scale(1.05); /* Efeito de crescimento no hover */
+}
+
+.navbar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #6dbeda; /* Barra azul claro embaixo do link */
+    transition: width 0.3s;
+}
+
+.navbar .links a:hover::after {
+    width: 100%; /* A barra se expande ao passar o mouse */
+}
+
+/* Círculo do usuário */
+.user-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #6dbeda; /* Azul claro */
+    color: #F0F4F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.user-circle:hover {
+    background-color: #303133; /* Azul elétrico ao passar o mouse */
+    transform: scale(1.1); /* Efeito de aumento */
+}
+
+.user-circle:active {
+    transform: scale(1); /* Volta ao normal quando pressionado */
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    right: 0;
+    background-color: #000000;
+    min-width: 180px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.603);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.dropdown-content.visible {
+    display: block;
+    opacity: 10;
+    visibility: visible;
+}
+
+.dropdown-content p,
+.dropdown-content a,
+.dropdown-content button {
+    padding: 12px 20px;
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    border-radius: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+    transform: translateX(5px); /* Efeito de deslocamento ao passar o mouse */
+}
+
+.dropdown-content button {
+    background-color: #f871713f;
+    color: white;
+    border: none;
+    padding: 1px 2px;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 50%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.dropdown-content button:hover {
+    background-color: #F44336;
+    transform: translateX(5px); /* Efeito de deslocamento no hover */
+}
+
+/* Estilos adicionais para uma sensação de profundidade */
+.dropdown-content a {
+    color: #ffffff;
+}
+
+.dropdown-content p {
+    color: #ffffff;
+    padding-left: 15px;
+}
+
+button.logout-btn {
+    background-color: #F87171;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button.logout-btn:hover {
+    background-color: #F44336;
+    transform: translateX(5px); /* Deslocamento no hover */
+}
+
+/* Estilos para o link ativo */
+.navbar .links a.active {
+    background-color: #00ddff83; /* Cor de fundo mais vibrante e moderna */
+    color: #fff; /* Texto branco */
+    border: 2px; /* Bordas mais arredondadas para um efeito mais suave */
+    padding: 12px 12px; /* Aumentar o espaçamento interno para um link mais espaçoso */
+    transform: scale(1.05); /* Pequeno efeito de zoom ao estar ativo */
+    transition: all 0.15s ease; /* Transição suave para todos os efeitos */
+}
+
+.navbar .links a.active:hover {
+    background-color: #0097a7; /* Tom mais escuro de azul ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5); /* Aumenta a sombra para maior destaque */
+    transform: scale(1.1); /* Efeito de zoom aumentado no hover */
+}
+
+
+/* Estilos gerais dos links */
+.navbar .links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    border-radius: 6px;
+}
+
+.navbar .links a:hover {
+    background-color: #1b1c1d; /* Cor ao passar o mouse */
+}
+
+/* Estilos para o loading */
+.loading {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
