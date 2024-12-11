@@ -146,7 +146,7 @@
             const errorMessage = document.getElementById('error-message');
 
             // Simulação de verificação simples de login
-            if ((username === '0' && password === '0') || (username === 'usuario' && password === '123')) {
+            if ((username === 'admin' && password === 'admin') || (username === 'usuario' && password === '123')) {
                 // Salva o login no localStorage para login automático
                 localStorage.setItem('loggedIn', 'true');
                 localStorage.setItem('username', username);
