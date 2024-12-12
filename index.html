@@ -16,7 +16,7 @@
         /* Estilo Geral */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
             color: #E0E0E0;
             display: flex;
             flex-direction: column;
@@ -30,9 +30,9 @@
             max-width: 960px;
             height: 100%;
             max-height: 800px;
-            background-color: #1E1E1E;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
             position: relative;
@@ -53,13 +53,15 @@
             right: 0;
             z-index: 100;
             border-radius: 15px 15px 0 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         .app-logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         /* Barra de Navegação Fixa */
@@ -79,25 +81,25 @@
         .navbar a {
             color: #B3B3B3;
             text-decoration: none;
-            font-size: 16px;
-            padding: 10px 20px;
+            font-size: 18px;
+            padding: 12px 25px;
             border-radius: 10px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .navbar a.active {
-            background-color: #1A73E8;
+            background-color: #FF5722;
             color: white;
-            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.6);
+            box-shadow: 0 5px 20px rgba(255, 87, 34, 0.6);
             transform: translateY(-4px);
         }
 
         .navbar a:hover {
-            background-color: #1A73E8;
+            background-color: #FF5722;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.5);
         }
 
         /* Conteúdo Principal */
@@ -110,12 +112,13 @@
         }
 
         h2 {
-            font-size: 24px;
-            color: #1A73E8;
+            font-size: 30px;
+            color: #FF5722;
+            text-shadow: 0 0 15px rgba(255, 87, 34, 0.8);
         }
 
         p {
-            font-size: 18px;
+            font-size: 20px;
             color: #B3B3B3;
         }
 
@@ -123,18 +126,19 @@
         .discord-btn {
             background-color: #7289da;
             color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 18px;
+            padding: 18px 35px;
+            border-radius: 15px;
+            font-size: 20px;
             font-weight: bold;
             margin-top: 30px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .discord-btn:hover {
             background-color: #5b6eae;
             transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(91, 110, 174, 0.6);
         }
 
         /* Barra Inferior */
@@ -147,12 +151,12 @@
             padding: 15px;
             display: flex;
             justify-content: center;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
             z-index: 100;
         }
 
         .footer-bar a {
-            font-size: 20px;
+            font-size: 24px;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -161,7 +165,7 @@
 
         .footer-bar a:hover {
             transform: translateY(-3px);
-            background-color: #7289da;
+            background-color: #FF5722;
             border-radius: 50%;
         }
 
@@ -181,8 +185,8 @@
             }
 
             .discord-btn {
-                font-size: 16px;
-                padding: 12px 25px;
+                font-size: 18px;
+                padding: 15px 30px;
             }
         }
     </style>
