@@ -1,0 +1,182 @@
+<style>
+    /* Definir variáveis para tamanho dos cards e imagens */
+    :root {
+        --card-width: 15%; /* Tamanho padrão dos cards (ajustável de 0 a 100%) */
+        --image-size: 100%; /* Tamanho padrão das imagens (ajustável de 0 a 100%) */
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(45deg, #000000, #182848);
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Efeito de hover para o card */
+    .team-card {
+        color: #ffffff;
+        border-radius: 15px;
+        width: var(--card-width); /* Usando variável para controle de tamanho */
+        margin: 15px;
+        padding: 20px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Tornando as imagens quadradas e ajustáveis */
+    .team-card img {
+        width: var(--image-size); /* Usando variável para controle de tamanho */
+        height: auto;
+        aspect-ratio: 1; /* Garante que a imagem tenha proporção quadrada */
+        object-fit: cover; /* Faz a imagem cobrir o espaço, cortando se necessário */
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+        display: block; /* Garante que a imagem se comporte como um bloco */
+        margin: 0 auto; /* Alinha a imagem ao centro */
+    }
+
+    .team-card h3 {
+        margin-top: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .team-card p {
+        font-size: 16px;
+        margin-top: 8px;
+        color: #ffffff;
+    }
+
+    .team-card .player-list {
+        font-size: 16px;
+        margin-top: 10px;
+        list-style-type: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .team-card .player-list li {
+        font-weight: bold;
+        color: #E0E0E0;
+    }
+
+    .team-card button {
+        background-color: #0707077a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    
+    /* Responsividade para 2x2 */
+    @media (max-width: 1024px) {
+        .team-card {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .team-card {
+            width: 90%;
+        }
+
+        .page-content {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+<div class="page-content" style="display: flex; flex-wrap: wrap; justify-content: space-around; padding: 20px; background-color: #12121200;">
+    
+    <!-- Card de Time A -->
+    <div class="team-card" style="background: linear-gradient(60deg, #3cff0070, #000000ee);">
+        <img src="images/teams/time_a.jpg" alt="Time A">
+        <h3>CHARLIE</h3>
+        <p>Capitão: XFire</p>
+        <div style="border-top: 2px solid #E0E0E0; margin: 15px 0;"></div>
+        <ul class="player-list">
+            <li>"XFire"</li>
+            <li>"Phantom"</li>
+            <li>"NightShade"</li>
+            <li>"Wolf"</li>
+        </ul>
+    </div>
+
+    <!-- Card de Time B -->
+    <div class="team-card" style="background: linear-gradient(155deg, #00ff8898, #00b7ff8a);">
+        <img src="images/teams/time_b.jpg" alt="Time B">
+        <h3>EPHOTO360</h3>
+        <p>Capitão: NovaStorm</p>
+        <div style="border-top: 2px solid #E0E0E0; margin: 15px 0;"></div>
+        <ul class="player-list">
+            <li>"NovaStorm"</li>
+            <li>"Blaze"</li>
+            <li>"Skyline"</li>
+            <li>"Thunder"</li>
+        </ul>
+    </div>
+
+    <!-- Card de Time C -->
+    <div class="team-card" style="background: linear-gradient(135deg, #ffc400, #005aad);">
+        <img src="images/teams/time_c.jpg" alt="Time C">
+        <h3>KINETIC</h3>
+        <p>Capitão: Storm</p>
+        <div style="border-top: 2px solid #E0E0E0; margin: 15px 0;"></div>
+        <ul class="player-list">
+            <li>"Storm"</li>
+            <li>"Viper"</li>
+            <li>"Blizzard"</li>
+            <li>"Shade"</li>
+        </ul>
+    </div>
+
+    <!-- Card de Time D -->
+    <div class="team-card" style="background: linear-gradient(135deg, #287c07, #540688);">
+        <img src="images/teams/time_d.jpg" alt="Time D">
+        <h3>SUICIDE</h3>
+        <p>Capitão: Wolf</p>
+        <div style="border-top: 2px solid #E0E0E0; margin: 15px 0;"></div>
+        <ul class="player-list">
+            <li>"Wolf"</li>
+            <li>"Reaper"</li>
+            <li>"Phoenix"</li>
+            <li>"Vortex"</li>
+        </ul>
+    </div>
+
+    <!-- Card de Time E -->
+    <div class="team-card" style="background: linear-gradient(135deg, #0000009a, #854200);">
+        <img src="images/teams/time_e.jpg" alt="Time E">
+        <h3>GET</h3>
+        <p>Capitão: NightShade</p>
+        <div style="border-top: 2px solid #E0E0E0; margin: 15px 0;"></div>
+        <ul class="player-list">
+            <li>"NightShade"</li>
+            <li>"Inferno"</li>
+            <li>"Echo"</li>
+            <li>"Frost"</li>
+        </ul>
+    </div>
+
+</div>
