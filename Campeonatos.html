@@ -1,178 +1,235 @@
-<!-- PUBG - Campeonatos e Conteúdos -->
-<h2>Campeonatos PUBG 2024</h2>
-<p>Bem-vindo à página dedicada aos campeonatos de PUBG! Aqui você encontrará informações sobre próximos eventos, estatísticas e atualizações sobre o mundo de PUBG.</p>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<!-- Seção de Próximos Campeonatos -->
-<h3>Próximos Campeonatos PUBG</h3>
-<table border="1" cellpadding="5" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Campeonato</th>
-      <th>Data</th>
-      <th>Local</th>
-      <th>Inscrições</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>PUBG Global Championship 2024</td>
-      <td>10/02/2024</td>
-      <td>Los Angeles, EUA</td>
-      <td><a href="#">Inscrever-se</a></td>
-    </tr>
-    <tr>
-      <td>PUBG Continental Series - América</td>
-      <td>25/03/2024</td>
-      <td>Online</td>
-      <td><a href="#">Inscrever-se</a></td>
-    </tr>
-    <tr>
-      <td>PUBG European Championship</td>
-      <td>05/04/2024</td>
-      <td>Berlim, Alemanha</td>
-      <td><a href="#">Inscrever-se</a></td>
-    </tr>
-  </tbody>
-</table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Página inicial com eventos, campeonatos amadores e atualizações sobre PUBG PC">
+    <meta name="keywords" content="PUBG PC, campeonatos amadores, torneios PUBG, esports, eventos PUBG">
+    <title>Home - PUBG PC - Campeonatos Amadores</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-<!-- Dicas para Jogadores de PUBG -->
-<h3>Dicas e Estratégias para Jogadores</h3>
-<ul>
-  <li>Como escolher a melhor arma para cada situação</li>
-  <li>Top 5 estratégias para sobreviver no final do jogo</li>
-  <li>Como se posicionar em mapas grandes como Erangel e Miramar</li>
-  <li>Importância de coordenar com seu time durante o combate</li>
-  <li>Dicas para gerenciar o inventário e otimizar seu equipamento</li>
-</ul>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #000000, #182848);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
 
-<!-- Atualizações Recentes -->
-<h3>Últimas Atualizações do PUBG</h3>
-<p>Confira as novidades mais recentes no mundo de PUBG:</p>
-<ul>
-  <li><strong>Atualização 21.1</strong> - Nova arma: M416 com mods</li>
-  <li><strong>Atualização 21.2</strong> - Ajustes no mapa Sanhok e balanceamento de armas</li>
-  <li><strong>Atualização 22.0</strong> - Rework completo do modo Ranked</li>
-</ul>
+        .main-content {
+            padding: 20px 10%;
+        }
 
-<!-- Top 5 Jogadores de PUBG 2024 -->
-<h3>Top 5 Jogadores Profissionais de PUBG</h3>
-<table border="1" cellpadding="5" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Posição</th>
-      <th>Jogador</th>
-      <th>Equipe</th>
-      <th>Vitórias</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1º</td>
-      <td>Shroud</td>
-      <td>Cloud9</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>2º</td>
-      <td>XeRoX</td>
-      <td>Team Liquid</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>3º</td>
-      <td>Sushiboy</td>
-      <td>FaZe Clan</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>4º</td>
-      <td>Beez</td>
-      <td>Ghost Gaming</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>5º</td>
-      <td>Fury</td>
-      <td>Team SoloMid</td>
-      <td>8</td>
-    </tr>
-  </tbody>
-</table>
+        h2.section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            animation: fadeIn 2s ease-in-out;
+            margin-bottom: 30px;
+        }
 
-<!-- Melhores Mapas de PUBG -->
-<h3>Melhores Mapas para Jogar PUBG</h3>
-<ul>
-  <li><strong>Erangel:</strong> Mapa clássico com boa mistura de ambientes urbanos e rurais.</li>
-  <li><strong>Miramar:</strong> Mapa desértico, ideal para jogadores que preferem um estilo de jogo mais estratégico.</li>
-  <li><strong>Sanhok:</strong> Mapa pequeno, perfeito para partidas mais rápidas e intensas.</li>
-  <li><strong>Vikendi:</strong> Mapa com clima de inverno, excelente para quem gosta de combate em terrenos difíceis.</li>
-</ul>
+        .events-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-<!-- Equipamento Essencial para PUBG -->
-<h3>Equipamento Essencial para PUBG</h3>
-<p>Para se destacar em PUBG, é essencial escolher o equipamento certo. Veja os melhores itens:</p>
-<ul>
-  <li><strong>Rifles de Assalto:</strong> M416, AKM, e Beryl M762</li>
-  <li><strong>Sniper:</strong> Kar98k, AWM, e Mini-14</li>
-  <li><strong>Vestuário:</strong> Capacetes e coletes de nível 3 para maior proteção</li>
-  <li><strong>Itens de cura:</strong> Kits médicos, bandagens e sprays</li>
-  <li><strong>Granadas:</strong> Granadas de fragmentação e de fumaça</li>
-</ul>
+        .event-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
 
-<!-- Equipamentos de Comunicação para Times -->
-<h3>Melhores Equipamentos de Comunicação para Times</h3>
-<p>Uma boa comunicação é fundamental em equipes. Aqui estão alguns equipamentos recomendados:</p>
-<ul>
-  <li>Fones de ouvido com microfone de alta qualidade</li>
-  <li>Software de comunicação como Discord ou TeamSpeak</li>
-  <li>Comandos de voz personalizados no jogo</li>
-</ul>
+        .event-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
 
-<!-- Dicas de Como Evitar Trapaças -->
-<h3>Como Evitar Trapaças em PUBG</h3>
-<p>Fique atento para garantir uma experiência de jogo justa e divertida:</p>
-<ul>
-  <li>Evite usar mods não oficiais</li>
-  <li>Denuncie jogadores suspeitos através da ferramenta de report</li>
-  <li>Jogue em servidores oficiais para evitar hacks</li>
-</ul>
+        .event-card h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+        }
 
-<!-- Histórias de Grandes Vitórias no PUBG -->
-<h3>Histórias de Grandes Vitórias</h3>
-<p>Confira algumas das vitórias mais épicas da história do PUBG:</p>
-<ul>
-  <li><strong>Team Liquid x FaZe Clan</strong>: Grande vitória na final do PUBG Global Championship 2023</li>
-  <li><strong>Shroud's Solo Victory</strong>: Shroud vence uma partida solo com apenas uma M416</li>
-</ul>
+        .event-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
 
-<!-- Análises e Reviews de Atualizações -->
-<h3>Análises e Reviews de Atualizações</h3>
-<p>O que a comunidade está dizendo sobre as últimas atualizações:</p>
-<ul>
-  <li><strong>Atualização 21.1</strong>: Melhora no desempenho gráfico, mas com alguns problemas de balanceamento</li>
-  <li><strong>Atualização 22.0</strong>: Novo sistema de ranqueamento foi bem recebido pela comunidade</li>
-</ul>
+        .event-card button {
+            background-color: #ffffff;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-<!-- Como Melhorar no PUBG -->
-<h3>Como Melhorar no PUBG</h3>
-<ul>
-  <li>Pratique o posicionamento e a leitura do mapa</li>
-  <li>Trabalhe na mira e no controle das armas</li>
-  <li>Jogue com amigos e desenvolva táticas de equipe</li>
-  <li>Estude os melhores jogadores para aprender com suas estratégias</li>
-</ul>
+        .event-card:hover {
+            transform: scale(1.05);
+        }
 
-<!-- A História do PUBG -->
-<h3>A História de PUBG</h3>
-<p>O PUBG foi criado por Brendan "PlayerUnknown" Greene e se tornou um dos jogos mais populares do gênero Battle Royale. O jogo foi lançado oficialmente em 2017 e revolucionou a indústria dos jogos online.</p>
+        .event-status {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
 
-<!-- Vídeos e Streams ao Vivo -->
-<h3>Vídeos e Streams ao Vivo de PUBG</h3>
-<p>Assista aos melhores streamers e competições ao vivo de PUBG:</p>
-<ul>
-  <li><a href="https://www.twitch.tv/shroud">Shroud no Twitch</a></li>
-  <li><a href="https://www.youtube.com/c/PUBG">Canal Oficial PUBG no YouTube</a></li>
-</ul>
+        /* Tabela de classificação */
+        .ranking-table {
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-<!-- Fim do conteúdo -->
-<p>Fique ligado para mais novidades sobre PUBG!</p>
+        .ranking-table th,
+        .ranking-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ffffff;
+        }
+
+        .ranking-table th {
+            background-color: #333;
+        }
+
+        .ranking-table tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ranking-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .ranking-table .position {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .ranking-table .eliminations {
+            font-size: 1.2rem;
+        }
+
+        .calendar-section {
+            margin-top: 50px;
+        }
+
+        .calendar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .calendar-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page-content" style="padding: 20px 10%; text-align: center;">
+        <div class="main-content">
+            
+            <!-- Tabela de Classificação -->
+            <section class="ranking-section">
+                <h2 class="section-title" style="color: #d8f2f7;">Tabela de Classificação - Campeonato PUBG</h2>
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Equipe</th>
+                            <th>Pontos</th>
+                            <th>Eliminações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                        <tr>
+                            <td class="position"><i class="fas fa-trophy"></i> 1º</td>
+                            <td>Team Alpha</td>
+                            <td>150</td>
+                            <td class="eliminations"><i class="fas fa-skull"></i> 32</td>
+                        </tr>
+                        <tr>
+                            <td class="position"><i class="fas fa-trophy"></i> 2º</td>
+                            <td>Team Bravo</td>
+                            <td>140</td>
+                            <td class="eliminations"><i class="fas fa-skull"></i> 28</td>
+                        </tr>
+                        <tr>
+                            <td class="position"><i class=""></i>3º</td>
+                            <td>Team Charlie</td>
+                            <td>120</td>
+                            <td class="eliminations"><i class="fas fa-skull"></i> 22</td>
+                        </tr>
+                        <tr>
+                            <td class="position"><i class=""></i>4º</td>
+                            <td>Team Delta</td>
+                            <td>110</td>
+                            <td class="eliminations"><i class="fas fa-skull"></i> 20</td>
+                        </tr>
+                        <tr>
+                            <td class="position"><i class="fas fa-"></i>5º</td>
+                            <td>Team Echo</td>
+                            <td>100</td>
+                            <td class="eliminations"><i class="fas fa-skull"></i> 18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Calendário de Partidas Futuras -->
+            <section class="calendar-section">
+                <h2 class="section-title">Próximos Eventos</h2>
+                <div class="calendar">
+                    <!-- Calendário -->
+                    <div class="calendar-card">
+                        <h3>Campeonato Dupla</h3>
+                        <p><i class="fas fa-calendar-alt"></i> 15 Dezembro 2024</p>
+                        <button>Ver Detalhes</button>
+                    </div>
+                    <div class="calendar-card">
+                        <h3>Campeonato Solo</h3>
+                        <p><i class="fas fa-calendar-alt"></i> 20 Dezembro 2024</p>
+                        <button>Ver Detalhes</button>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    
+    <script>
+        // Efeito de animação para a entrada de elementos
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Função para carregar detalhes do evento
+        function loadEventDetails(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>
