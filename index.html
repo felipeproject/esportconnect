@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo Profissional</title>
+    <style>
+        /* Reset de Estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo Geral */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212; /* Fundo escuro */
+            color: #E0E0E0; /* Texto claro */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0;
+        }
+
+        /* Janela Principal do App */
+        .app-window {
+            width: 100%;
+            max-width: 960px;
+            height: 100%;
+            max-height: 800px;
+            background-color: #1E1E1E; /* Cor de fundo escura para a janela */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 70px; /* Espaço para a barra de navegação fixa */
+        }
+
+        /* Barra de Título do App (Logo e Menu) */
+        .app-header {
+            background-color: #1A73E8; /* Azul sutil */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Barra de Navegação Fixa com Links */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333; /* Cor de fundo escuro para a navbar */
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 70px; /* Posiciona a barra abaixo da barra de título */
+            left: 0;
+            right: 0;
+            z-index: 50;
+            flex-wrap: nowrap; /* Mantém os itens na horizontal */
+        }
+
+        /* Estilo dos links da barra de navegação */
+        .navbar a {
+            color: #B3B3B3; /* Cor mais suave para os links */
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s, filter 0.3s;
+            position: relative;
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Barra de Navegação - Aba Ativa */
+        .navbar a.active {
+            background-color: #1A73E8; /* Azul suave */
+            color: white;
+            border-radius: 10px 10px 0 0; /* Formato de aba */
+            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.5);
+            transform: translateY(-5px); /* Efeito de elevação */
+        }
+
+        /* Conteúdo Principal */
+        .app-content {
+            padding: 20px;
+            margin-top: 90px; /* Deixa o conteúdo abaixo das barras fixas */
+            text-align: center;
+            flex-grow: 1;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .tab-content {
+            display: none;
+            opacity: 0;
+        }
+
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1A73E8; /* Azul suave */
+        }
+
+        p {
+            font-size: 18px;
+            color: #B3B3B3; /* Texto claro para parágrafos */
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-header">
+        <div class="app-logo">MeuApp</div>
+    </div>
+
+    <div class="navbar">
+        <a href="#" onclick="changeTab('home')" class="active">Home</a>
+        <a href="#" onclick="changeTab('campeonatos')">Campeonatos</a>
+        <a href="#" onclick="changeTab('times')">Times</a>
+        <a href="#" onclick="changeTab('eventos')">Eventos</a>
+        <a href="#" onclick="changeTab('perfil')">Perfil</a>
+    </div>
+
+    <div class="app-content" id="content">
+        <!-- O conteúdo será carregado dinamicamente aqui -->
+    </div>
+
+    <script>
+        // Função para ativar a aba clicada e carregar conteúdo de arquivos HTML
+        function changeTab(tabId) {
+            // Remover a classe 'active' de todas as abas
+            const tabs = document.querySelectorAll('.navbar a');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Adicionar a classe 'active' à aba clicada
+            const activeTab = document.querySelector(`.navbar a[onclick="changeTab('${tabId}')"]`);
+            activeTab.classList.add('active');
+
+            // Carregar o conteúdo dinâmico (exemplo com fetch)
+            loadDynamicContent(tabId);
+        }
+
+        // Função para carregar o conteúdo HTML da aba
+        function loadDynamicContent(tabId) {
+            const contentElement = document.getElementById('content');
+            const filePath = `${tabId}.html`; // O caminho do arquivo HTML baseado no nome da aba
+
+            // Usando fetch para carregar o conteúdo da aba
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao carregar o conteúdo');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    contentElement.innerHTML = html; // Substitui o conteúdo com o HTML carregado
+                })
+                .catch(error => {
+                    contentElement.innerHTML = `<p>Erro ao carregar conteúdo.</p>`; // Mensagem de erro
+                });
+        }
+
+        // Função de exemplo para inicializar com o conteúdo da primeira aba
+        document.addEventListener("DOMContentLoaded", () => {
+            changeTab('home'); // Inicializa com a aba "Home"
+        });
+    </script>
+
+</body>
+</html>
