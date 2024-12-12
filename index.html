@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,18 +17,18 @@
         /* Estilo Geral */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4; /* Cor de fundo mais clara e clean */
-            color: #333; /* Cor de texto mais suave */
+            background-color: #f4f4f4;
+            color: #333;
             display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
         }
 
         /* Janela Principal do App */
         .app-window {
-            width: 100%;  /* Define que a janela ocupará 50% da largura da tela */
+            width: 100%;
             max-width: 960px;
             height: 100%;
             max-height: 800px;
@@ -39,7 +40,7 @@
 
         /* Barra de Título */
         .app-header {
-            background-color: #141414; /* Cor escura para contraste */
+            background-color: #141414;
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -65,7 +66,7 @@
         .navbar {
             display: flex;
             justify-content: space-around;
-            background-color: #141414; /* Cor escura para contraste */
+            background-color: #141414;
             padding: 15px 0;
             position: fixed;
             top: 60px;
@@ -101,8 +102,8 @@
 
         /* Conteúdo Principal */
         .app-content {
-            margin-top: 110px; /* Evita que o conteúdo fique muito perto da navbar */
-            padding: 40px; /* Mais espaçamento para o conteúdo */
+            margin-top: 110px;
+            padding: 40px;
             text-align: center;
             flex-grow: 1;
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -110,13 +111,13 @@
 
         h2 {
             font-size: 30px;
-            color: #4A90E2; /* Cor mais suave para o título */
+            color: #4A90E2;
             text-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
         p {
             font-size: 20px;
-            color: #666; /* Cor de texto suave */
+            color: #666;
         }
 
         /* Botão Discord */
@@ -150,6 +151,13 @@
             justify-content: center;
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
             z-index: 100;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-bar.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .footer-bar a {
@@ -177,7 +185,8 @@
                 margin: 10px 0;
             }
 
-            .app-header, .footer-bar {
+            .app-header,
+            .footer-bar {
                 padding: 10px;
             }
 
@@ -187,12 +196,13 @@
             }
 
             .app-window {
-                width: 80%; /* Torna a janela mais estreita em telas pequenas */
+                width: 80%;
                 padding: 15px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Janela Principal -->
@@ -220,11 +230,11 @@
                 Entrar na Comunidade do Discord
             </a>
         </div>
-        
+
     </div>
 
     <!-- Barra Inferior -->
-    <div class="footer-bar">
+    <div class="footer-bar" id="footer-bar">
         <a href="https://discord.com/invite/seu-link-aqui" target="_blank">
             <i class="fab fa-discord"></i>
         </a>
@@ -234,28 +244,23 @@
     <script>
         // Função para ativar a aba clicada e carregar conteúdo de arquivos HTML
         function changeTab(tabId) {
-            // Remover a classe 'active' de todas as abas
             const tabs = document.querySelectorAll('.navbar a');
             tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Adicionar a classe 'active' à aba clicada
+
             const activeTab = document.querySelector(`.navbar a[onclick="changeTab('${tabId}')"]`);
             activeTab.classList.add('active');
 
-            // Carregar o conteúdo dinâmico (exemplo com fetch)
             loadDynamicContent(tabId);
         }
 
-        // Função para carregar o conteúdo HTML da aba
         function loadDynamicContent(tabId) {
             const contentElement = document.getElementById('content');
-            const filePath = `${tabId}.html`; // O caminho do arquivo HTML baseado no nome da aba
+            const filePath = `${tabId}.html`;
 
-            // Usando fetch para carregar o conteúdo da aba
             fetch(filePath)
                 .then(response => response.text())
                 .then(html => {
-                    contentElement.innerHTML = html; // Substitui o conteúdo com o HTML carregado
+                    contentElement.innerHTML = html;
                 })
                 .catch(() => {
                     contentElement.innerHTML = `<p>Erro ao carregar conteúdo.</p>`;
@@ -264,9 +269,19 @@
 
         // Inicializa com a primeira aba ativa
         document.addEventListener("DOMContentLoaded", () => {
-            changeTab('home'); // Inicializa com a aba "Dashboard"
+            changeTab('home'); 
+        });
+
+        window.addEventListener('scroll', function () {
+            var footerBar = document.getElementById('footer-bar');
+            if (window.scrollY > 0) {
+                footerBar.classList.add('hidden');
+            } else {
+                footerBar.classList.remove('hidden');
+            }
         });
     </script>
 
 </body>
+
 </html>
