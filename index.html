@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo Profissional</title>
+    <title>EsportConnect - Comunidade PUBG</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* Reset de Estilos */
         * {
@@ -15,12 +16,12 @@
         /* Estilo Geral */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Fundo escuro */
-            color: #E0E0E0; /* Texto claro */
+            background-color: #121212;
+            color: #E0E0E0;
             display: flex;
             flex-direction: column;
             height: 100vh;
-            padding: 0;
+            margin: 0;
         }
 
         /* Janela Principal do App */
@@ -29,18 +30,18 @@
             max-width: 960px;
             height: 100%;
             max-height: 800px;
-            background-color: #1E1E1E; /* Cor de fundo escura para a janela */
+            background-color: #1E1E1E;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             position: relative;
-            margin-top: 70px; /* Espaço para a barra de navegação fixa */
+            margin-top: 70px;
         }
 
-        /* Barra de Título do App (Logo e Menu) */
+        /* Barra de Título */
         .app-header {
-            background-color: #1A73E8; /* Azul sutil */
+            background-color: #1A73E8;
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -52,7 +53,7 @@
             right: 0;
             z-index: 100;
             border-radius: 15px 15px 0 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
         }
 
         .app-logo {
@@ -61,75 +62,110 @@
             text-transform: uppercase;
         }
 
-        /* Barra de Navegação Fixa com Links */
+        /* Barra de Navegação Fixa */
         .navbar {
             display: flex;
             justify-content: space-around;
-            background-color: #333; /* Cor de fundo escuro para a navbar */
-            color: white;
+            background-color: #333;
             padding: 15px 0;
             position: fixed;
-            top: 70px; /* Posiciona a barra abaixo da barra de título */
+            top: 70px;
             left: 0;
             right: 0;
             z-index: 50;
-            flex-wrap: nowrap; /* Mantém os itens na horizontal */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Estilo dos links da barra de navegação */
         .navbar a {
-            color: #B3B3B3; /* Cor mais suave para os links */
+            color: #B3B3B3;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s, transform 0.3s, filter 0.3s;
-            position: relative;
-            padding: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            display: inline-block;
         }
 
-        /* Barra de Navegação - Aba Ativa */
         .navbar a.active {
-            background-color: #1A73E8; /* Azul suave */
+            background-color: #1A73E8;
             color: white;
-            border-radius: 10px 10px 0 0; /* Formato de aba */
-            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.5);
-            transform: translateY(-5px); /* Efeito de elevação */
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.6);
+            transform: translateY(-4px);
+        }
+
+        .navbar a:hover {
+            background-color: #1A73E8;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
         }
 
         /* Conteúdo Principal */
         .app-content {
+            margin-top: 110px;
             padding: 20px;
-            margin-top: 90px; /* Deixa o conteúdo abaixo das barras fixas */
             text-align: center;
             flex-grow: 1;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        .tab-content {
-            display: none;
-            opacity: 0;
-        }
-
-        .tab-content.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         h2 {
             font-size: 24px;
-            margin-bottom: 20px;
-            color: #1A73E8; /* Azul suave */
+            color: #1A73E8;
         }
 
         p {
             font-size: 18px;
-            color: #B3B3B3; /* Texto claro para parágrafos */
+            color: #B3B3B3;
         }
 
-        /* Responsividade para dispositivos móveis */
+        /* Botão Discord */
+        .discord-btn {
+            background-color: #7289da;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .discord-btn:hover {
+            background-color: #5b6eae;
+            transform: translateY(-3px);
+        }
+
+        /* Barra Inferior */
+        .footer-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1E1E1E;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .footer-bar a {
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bar a:hover {
+            transform: translateY(-3px);
+            background-color: #7289da;
+            border-radius: 50%;
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -139,27 +175,56 @@
             .navbar a {
                 margin: 10px 0;
             }
+
+            .app-header, .footer-bar {
+                padding: 10px;
+            }
+
+            .discord-btn {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="app-header">
-        <div class="app-logo">MeuApp</div>
+    <!-- Janela Principal -->
+    <div class="app-window">
+
+        <!-- Barra de Título -->
+        <div class="app-header">
+            <div class="app-logo">EsportConnect</div>
+        </div>
+
+        <!-- Barra de Navegação -->
+        <div class="navbar">
+            <a href="#" onclick="changeTab('home')" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#" onclick="changeTab('campeonatos')"><i class="fas fa-trophy"></i> Campeonatos</a>
+            <a href="#" onclick="changeTab('times')"><i class="fas fa-users"></i> Times</a>
+            <a href="#" onclick="changeTab('eventos')"><i class="fas fa-calendar-alt"></i> Eventos</a>
+            <a href="#" onclick="changeTab('perfil')"><i class="fas fa-user"></i> Perfil</a>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="app-content" id="content">
+            <h2>Bem-vindo ao EsportConnect</h2>
+            <p>Acesse a navegação acima para explorar a plataforma.</p>
+            <a href="https://discord.com/invite/seu-link-aqui" target="_blank" class="discord-btn">
+                Entrar na Comunidade do Discord
+            </a>
+        </div>
+        
     </div>
 
-    <div class="navbar">
-        <a href="#" onclick="changeTab('home')" class="active">Home</a>
-        <a href="#" onclick="changeTab('campeonatos')">Campeonatos</a>
-        <a href="#" onclick="changeTab('times')">Times</a>
-        <a href="#" onclick="changeTab('eventos')">Eventos</a>
-        <a href="#" onclick="changeTab('perfil')">Perfil</a>
+    <!-- Barra Inferior -->
+    <div class="footer-bar">
+        <a href="https://discord.com/invite/seu-link-aqui" target="_blank">
+            <i class="fab fa-discord"></i>
+        </a>
     </div>
 
-    <div class="app-content" id="content">
-        <!-- O conteúdo será carregado dinamicamente aqui -->
-    </div>
-
+    <!-- Scripts -->
     <script>
         // Função para ativar a aba clicada e carregar conteúdo de arquivos HTML
         function changeTab(tabId) {
@@ -182,23 +247,18 @@
 
             // Usando fetch para carregar o conteúdo da aba
             fetch(filePath)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erro ao carregar o conteúdo');
-                    }
-                    return response.text();
-                })
+                .then(response => response.text())
                 .then(html => {
                     contentElement.innerHTML = html; // Substitui o conteúdo com o HTML carregado
                 })
-                .catch(error => {
-                    contentElement.innerHTML = `<p>Erro ao carregar conteúdo.</p>`; // Mensagem de erro
+                .catch(() => {
+                    contentElement.innerHTML = `<p>Erro ao carregar conteúdo.</p>`;
                 });
         }
 
-        // Função de exemplo para inicializar com o conteúdo da primeira aba
+        // Inicializa com a primeira aba ativa
         document.addEventListener("DOMContentLoaded", () => {
-            changeTab('home'); // Inicializa com a aba "Home"
+            changeTab('home'); // Inicializa com a aba "Dashboard"
         });
     </script>
 
